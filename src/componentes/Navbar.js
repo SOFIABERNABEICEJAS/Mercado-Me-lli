@@ -1,0 +1,66 @@
+import * as React from "react";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import MenuIcon from "@mui/icons-material/Menu";
+import Paper from "@mui/material/Paper";
+import InputBase from "@mui/material/InputBase";
+import Divider from "@mui/material/Divider";
+import SearchIcon from "@mui/icons-material/Search";
+import melli from "../imagen/melli.png";
+
+const Navbar = () => {
+	return (
+		<Box sx={{ flexGrow: 1 }}>
+			<AppBar position="static">
+				<Toolbar
+					sx={{
+						backgroundColor: "#fff15a",
+						display: "flex",
+						justifyContent: "flex-start",
+					}}
+				>
+					<Box
+						sx={{
+							mr: "30px",
+						}}
+					>
+						<img src={melli} alt="mercado ME-LLI" />
+					</Box>
+					<Paper
+						component="form"
+						sx={{
+							p: "0px 4px",
+							display: "flex",
+							alignItems: "center",
+							width: 600,
+						}}
+					>
+						<InputBase
+							sx={{ ml: 1, flex: 1 }}
+							placeholder="Buscar productos, marcas y más..."
+						/>
+						<Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
+						<IconButton type="submit" sx={{ p: "10px" }} aria-label="search">
+							<SearchIcon />
+						</IconButton>
+					</Paper>
+
+					<IconButton
+						size="large"
+						edge="end"
+						aria-label="menu"
+						sx={{
+							mr: 2,
+							display: { sm: "none", md: "none", lg: "none", xl: "none" },
+						}}
+					>
+						<MenuIcon />
+					</IconButton>
+				</Toolbar>
+			</AppBar>
+		</Box>
+	);
+};
+export default Navbar;
