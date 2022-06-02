@@ -3,10 +3,8 @@ import Container from "@mui/material/Container";
 import TarjetaIndividual from "./TarjetaIndividual";
 import useFetchSerch from "../hooks/UseFetchSearch";
 import { Link } from "react-router-dom";
-import { useParams } from "react-router-dom";
 
 const ResultadoDeBusqueda = () => {
-	const params = useParams();
 	const { productos } = useFetchSerch();
 
 	return (
@@ -16,11 +14,14 @@ const ResultadoDeBusqueda = () => {
 			<Container>
 				<Grid container justifyContent="center" alignItems="center">
 					{productos.map((curr) => (
-						<Link to={`/search/${params.search}/${curr.id}`} key={curr.id}>
+						<Link to={`/items/${curr.id}`} key={curr.id}>
 							<TarjetaIndividual
 								titulo={curr.title}
 								imagen={curr.thumbnail}
 								precio={curr.price}
+								condicion={curr.condition}
+								envio={curr.shipping.free_shipping}
+								picture={curr.picture}
 							/>
 						</Link>
 					))}

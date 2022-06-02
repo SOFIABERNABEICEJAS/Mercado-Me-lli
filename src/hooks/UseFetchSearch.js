@@ -11,6 +11,7 @@ const UseFechSearch = (page) => {
 				setProductos(data.results);
 			});
 	}, [params.search]);
+
 	return {
 		productos: productos,
 	};
