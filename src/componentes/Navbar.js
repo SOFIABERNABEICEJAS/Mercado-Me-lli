@@ -9,12 +9,22 @@ import InputBase from "@mui/material/InputBase";
 import Divider from "@mui/material/Divider";
 import SearchIcon from "@mui/icons-material/Search";
 import melli from "../imagen/melli.png";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const Navbar = ({ handleChange, handleClick }) => {
+const Navbar = () => {
+	const navigate = useNavigate();
+	const [valorDelInput, setValorDelInput] = useState("");
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		//navigate(`/search/${valorDelInput}`);
+		navigate(`/busqueda/${valorDelInput}`);
 	};
+
+	const handleChange = (e) => {
+		setValorDelInput(e.target.value);
+	};
+
 	return (
 		<Box sx={{ flexGrow: 1 }}>
 			<AppBar position="static">
@@ -35,6 +45,7 @@ const Navbar = ({ handleChange, handleClick }) => {
 					</Box>
 					<Paper
 						component="form"
+						onSubmit={handleSubmit}
 						sx={{
 							p: "0px 4px",
 							display: "flex",
@@ -48,12 +59,7 @@ const Navbar = ({ handleChange, handleClick }) => {
 							placeholder="Buscar productos, marcas y más..."
 						/>
 						<Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
-						<IconButton
-							type="submit"
-							sx={{ p: "10px" }}
-							aria-label="buscar"
-							onClick={handleClick}
-						>
+						<IconButton type="submit" sx={{ p: "10px" }} aria-label="buscar">
 							<SearchIcon />
 						</IconButton>
 					</Paper>

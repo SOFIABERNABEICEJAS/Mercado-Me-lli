@@ -5,7 +5,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
-const TarjetaIndividual = ({ imagen, titulo }) => {
+const TarjetaIndividual = ({ imagen, titulo, precio }) => {
 	return (
 		<Grid>
 			<Card sx={{ width: 800, height: 250, m: 0.3 }}>
@@ -24,6 +24,8 @@ const TarjetaIndividual = ({ imagen, titulo }) => {
 						<Typography variant="body2" color="text.secondary">
 							{titulo}
 						</Typography>
+
+						<Typography variant="h6">{precio}</Typography>
 					</CardContent>
 				</CardActions>
 			</Card>
