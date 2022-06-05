@@ -6,27 +6,37 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 
-const TarjetaIndividual = ({
-	imagen,
-	titulo,
-	precio,
-	condicion,
-	envio,
-	picture,
-}) => {
+const TarjetaIndividual = ({ imagen, titulo, precio, condicion, envio }) => {
 	return (
 		<Grid>
-			<Card sx={{ width: 800, height: 250, m: 0.3 }}>
+			<Card
+				xs={10}
+				sx={{
+					width: 800,
+					height: 250,
+
+					m: 0.3,
+					display: "flex",
+					alignItems: "center",
+					justifyContent: "flexStart",
+				}}
+			>
 				<CardActions>
 					<CardMedia
 						component="img"
-						height="140"
+						height="150"
 						image={imagen}
 						alt={titulo}
 						style={{ objectFit: "contain" }}
 					/>
 					<CardContent>
-						<Typography gutterBottom variant="h6" component="div">
+						<Typography
+							variant="body1"
+							sx={{ fontSize: 15, pl: 0.5, color: "#bdbdbd" }}
+						>
+							{condicion === "new" ? "Nuevo" : "Usado"}
+						</Typography>
+						<Typography variant="body2" sx={{ fontSize: 20 }}>
 							{titulo}
 						</Typography>
 						{envio && (
@@ -36,10 +46,6 @@ const TarjetaIndividual = ({
 						)}
 
 						<Typography variant="h6">{`$ ${precio} `}</Typography>
-						<Typography variant="h6">{picture}</Typography>
-						<Typography variant="h6">
-							{condicion === "new" ? "Nuevo" : "Usado"}
-						</Typography>
 					</CardContent>
 				</CardActions>
 			</Card>

@@ -25,26 +25,42 @@ const TarjetaDetalles = () => {
 		>
 			<Container>
 				<Grid container justifyContent="center" alignItems="center">
-					<Card sx={{ width: 800, height: 300 }}>
+					<Card
+						sx={{
+							width: 800,
+							height: 300,
+							display: "flex",
+							alignItems: "center",
+							justifyContent: "flexStart",
+						}}
+					>
 						<CardActions>
 							<CardMedia
 								component="img"
-								height="140"
+								height="200"
 								image={detalles.secure_thumbnail}
 								alt={detalles.title}
 								style={{ objectFit: "contain" }}
 							/>
 							<CardContent>
-								<Typography gutterBottom variant="h6" component="div">
-									{detalles.title}
+								<Typography
+									variant="body1"
+									sx={{ fontSize: 15, pl: 0.5, color: "#bdbdbd" }}
+								>
+									{`  ${
+										detalles.condition === "new" ? "Nuevo | " : "Usado | "
+									}     ${
+										detalles.initial_quantity - detalles.available_quantity
+									}
+									 vendidos`}
 								</Typography>
 
+								<Typography variant="h3" sx={{ fontSize: 25, m: 1 }}>
+									{detalles.title}
+								</Typography>
 								<Typography variant="body2">{`Cantidad disponible: ${detalles.available_quantity} `}</Typography>
 								<Typography variant="h4">{`$ ${detalles.base_price} `}</Typography>
 								<Typography variant="body1">{detalles.descriptions}</Typography>
-								<Typography variant="body1">
-									{detalles.condition === "new" ? "Nuevo" : "Usado"}
-								</Typography>
 							</CardContent>
 						</CardActions>
 					</Card>

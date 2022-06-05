@@ -14,14 +14,17 @@ const ResultadoDeBusqueda = () => {
 			<Container>
 				<Grid container justifyContent="center" alignItems="center">
 					{productos.map((curr) => (
-						<Link to={`/items/${curr.id}`} key={curr.id}>
+						<Link
+							to={`/items/${curr.id}`}
+							key={curr.id}
+							style={{ textDecoration: "none" }}
+						>
 							<TarjetaIndividual
 								titulo={curr.title}
 								imagen={curr.thumbnail}
 								precio={curr.price}
 								condicion={curr.condition}
 								envio={curr.shipping.free_shipping}
-								picture={curr.picture}
 							/>
 						</Link>
 					))}
