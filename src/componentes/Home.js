@@ -1,29 +1,31 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
+import publicidad from "../imagen/publicidad.png";
+import publicidad2 from "../imagen/publicidad2.png";
+import publicidad3 from "../imagen/publicidad2.png";
+import Box from "@mui/material/Box";
+//no es lo idea todavia no encuntro la publicidad en la api. Sigo trabajando
 const Home = () => {
 	return (
-		<Slider arrows={false} slidesToShow={1} autoplay={true}>
-			<div>
-				<h3>proximamente carrusel con promociones1</h3>
-			</div>
-			<div>
-				<h3>proximamente carrusel con promociones2</h3>
-			</div>
-			<div>
-				<h3>proximamente carrusel con promociones3</h3>
-			</div>
-			<div>
-				<h3>proximamente carrusel con promociones4</h3>
-			</div>
-			<div>
-				<h3>proximamente carrusel con promociones5</h3>
-			</div>
-			<div>
-				<h3>proximamente carrusel con promociones</h3>
-			</div>
-		</Slider>
+		<Box
+			sx={{
+				pb: "200px",
+				backgroundColor: "#ebebeb",
+			}}
+		>
+			<Slider dots={true} slidesToShow={1} autoplay={true}>
+				<div style={{ objectFit: "contain" }}>
+					<img src={publicidad} alt="publicidad"></img>
+				</div>
+				<div style={{ objectFit: "contain" }}>
+					<img src={publicidad2} alt="publicidad"></img>
+				</div>
+				<div style={{ objectFit: "contain" }}>
+					<img src={publicidad3} alt="publicidad"></img>
+				</div>
+			</Slider>
+		</Box>
 	);
 };
 export default Home;
