@@ -14,7 +14,6 @@ const TarjetaIndividual = ({ imagen, titulo, precio, condicion, envio }) => {
 				sx={{
 					width: 800,
 					height: 250,
-
 					m: 0.3,
 					display: "flex",
 					alignItems: "center",
