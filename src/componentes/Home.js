@@ -1,7 +1,9 @@
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import publicidad from "../imagen/publicidad.png";
 import publicidad2 from "../imagen/publicidad2.png";
-import publicidad3 from "../imagen/publicidad2.png";
+import publicidad3 from "../imagen/publicidad3.png";
 import Box from "@mui/material/Box";
 //no es lo idea todavia no encuntro la publicidad en la api. Sigo trabajando
 const Home = () => {
