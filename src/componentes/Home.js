@@ -1,6 +1,4 @@
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import publicidad from "../imagen/publicidad.png";
 import publicidad2 from "../imagen/publicidad2.png";
 import publicidad3 from "../imagen/publicidad2.png";
